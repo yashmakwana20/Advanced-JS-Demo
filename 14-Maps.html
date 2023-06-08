@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+
+<body>
+    <h1>Maps</h1>
+
+    <script>
+
+        // Map is store key and value pairs
+        let mapObj = new Map()
+        console.log(mapObj);
+
+        const key1 = "str", key2 = { nmae: "obj" }, key3 = function () { }
+
+        // Set the key value in map
+        mapObj.set(key1, "This is string.")
+        mapObj.set(key2, "This is Object.")
+        mapObj.set(key3, "This is blank function.")
+        console.log(mapObj);
+
+        // Get keys in map
+        let getMap = mapObj.get(key2)
+        console.log(getMap);
+
+        // Size of the map
+        console.log(mapObj.size);
+
+        // get keys and values using for of loop
+        console.log("get key and value");
+        for (let [key, value] of mapObj) {
+            console.log(key, value);
+        }
+
+        // Get only keys 
+        console.log("get key");
+        for (let key of mapObj.keys()) {
+            console.log(key);
+        }
+
+        // Get only values 
+        console.log("get value");
+        for (let values of mapObj.values()) {
+            console.log(values);
+        }
+
+        // using forEach loop
+        console.log("----using forEach loop----");
+        mapObj.forEach((value, key) => {
+            console.log(key);
+            console.log(value);
+        })
+
+        // Convert map in Array
+        console.log("Converting map into an array");
+        let mapArr = Array.from(mapObj)
+        console.log(mapArr);
+
+    </script>
+</body>
+
+</html>

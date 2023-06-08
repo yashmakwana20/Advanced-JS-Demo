@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function</title>
+</head>
+
+<body>
+    <h1>Classes</h1>
+
+    <script>
+        class Student {
+            constructor(pName, pStd, pMarks) {
+                this.pName = pName;
+                this.pStd = pStd;
+                this.pMarks = pMarks;
+            }
+
+            add(num){
+                 this.pMarks += num
+            }
+
+            subStract(num){
+                 this.pMarks -= num
+            }
+        }
+
+        const studentFirst = new Student("Yash", 10, 90)
+        const studentSecond = new Student("Sanjay", 9, 90)
+
+        studentFirst.add(5)
+        studentSecond.subStract(10)
+        console.log(studentFirst, studentSecond);
+    </script>
+</body>
+
+</html>

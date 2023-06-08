@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, Filter & Reduce</title>
+</head>
+
+<body>
+    <h1>Map, Filter & Reduce</h1>
+
+    <script>
+
+        console.log("--------Map--------");
+        let mapArr = [20, 50, 30, 44, 70]
+        let mapArr1 = mapArr.map((value, index, array) => {
+            console.log(value, index, array);
+            return value + 4
+        })
+        console.log("After map method : ");
+        console.log(mapArr1);
+        console.log("Original Array : ");
+        console.log(mapArr);
+
+        console.log("--------Filter--------");
+        let filterArr = [1,2,6,50,40,88,1]
+        let filterArr1 = filterArr.filter((a) => {
+            return a>10
+        })
+        console.log("After filter method : ");
+        console.log(filterArr1);
+        console.log("Original Array : ");
+        console.log(filterArr);
+
+        console.log("--------Reduce--------");
+        let reduceArr = [22,10,8,30,55]
+        let reduceArr1 = reduceArr.reduce((x,y) => {
+            return x - y
+        })
+        console.log("Original Array : ");
+        console.log(reduceArr);
+        console.log(reduceArr1);
+
+    </script>
+</body>
+
+</html>

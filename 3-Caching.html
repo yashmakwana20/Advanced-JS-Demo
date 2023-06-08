@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caching</title>
+</head>
+
+<body>
+    <h1>Caching</h1>
+    <script>
+
+        // caches.open("data").then(cache => {
+        //     cache.add("https://dummyjson.com/carts").then(() => {
+        //         console.log(); ("Data fatches!!")
+        //     })
+        // })
+        caches.open("data").then(cache => {
+            cache.addAll(["https://dummyjson.com/carts", "https://dummyjson.com/quotes"]).then(() => {
+                console.log("Data fatches!!")
+            })
+        })
+
+        // fetch("https://dummyjson.com/carts").then((res) => {
+        //     return caches.open("data").then((cache) => {
+        //         return cache.put("https://dummyjson.com/carts",res)
+        //     })
+        // })
+
+        caches.open("data").then(() => {
+            caches.match("https://dummyjson.com/quotes").then(res => {
+                console.log(res);
+            })
+        })
+
+        caches.open("data").then((cache) => {
+            console.log(cache.matchAll(["https://dummyjson.com/carts", "https://dummyjson.com/quotes"]).then(res => {
+                console.log(res);
+            }))
+        })
+
+        caches.open("data").then((cache) => {
+            cache.delete("https://api.publicapis.org/entries")
+            cache.keys().then(array => {
+                console.log(array);
+            })
+        })
+
+    </script>
+</body>
+
+</html>

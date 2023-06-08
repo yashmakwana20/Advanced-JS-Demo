@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object</title>
+</head>
+<body>
+    <h1>Date</h1>
+    <script>
+
+        // Date Object
+        let today = new Date()
+        console.log(today);
+        console.log(today.toString());
+        console.log(today.toDateString());
+        console.log(today.toUTCString());
+        console.log(today.toISOString());
+
+        // Date get Method
+        console.log("-------------Get Method-------------");
+        console.log("Year : " + today.getFullYear());
+        console.log("Month : " + today.getMonth());
+        console.log("Day : " + today.getDay());
+        console.log("Date : " + today.getDate());
+        console.log("Hours : " + today.getHours());
+        console.log("Minutes : " + today.getMinutes());
+        console.log("Seconds : " + today.getSeconds());
+        console.log("MiliSeconds : " + today.getMilliseconds());
+        console.log("time : " + today.getTime());
+        console.log(`Differance b\w local and UTC timezone : ` + today.getTimezoneOffset());
+
+        let otherDate = new Date("2001 10 20 12:01:30")
+        console.log(otherDate);
+
+        // Date UTC get method
+        console.log("-------------Get UTC Method-------------");
+        console.log("UTC Date : " + otherDate.getUTCDate());
+        console.log("UTC Year : " + otherDate.getUTCFullYear());
+        console.log("UTC Month : " + otherDate.getUTCMonth());
+        console.log("UTC Day : " + otherDate.getUTCDay());
+        console.log("UTC Hour : " + otherDate.getUTCHours());
+        console.log("UTC Minutes : " + otherDate.getUTCMinutes());
+        console.log("UTC Seconds : " + otherDate.getUTCSeconds());
+        console.log("UTC MiliSeconds : " + otherDate.getUTCMilliseconds());
+        console.log(`Differance b\w local and UTC timezone : ` + otherDate.getTimezoneOffset());
+
+        let newDate = new Date()
+
+        // Date set Method
+        console.log("-------------Set Method-------------");
+        newDate.setFullYear(2003)
+        newDate.setMonth(10)
+        newDate.setDate(22)
+        newDate.setHours(01)
+        newDate.setMinutes("02")
+        newDate.setSeconds("03")
+        newDate.setUTCMilliseconds("50")
+        console.log(newDate);
+
+    </script>
+</body>
+</html>

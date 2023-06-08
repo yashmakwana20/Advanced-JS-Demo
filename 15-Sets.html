@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+
+<body>
+    <h1>Sets</h1>
+
+    <script>
+
+        // Set is store only unique values
+        let setObj = new Set();
+        setObj.add("hello")
+        setObj.add(10)
+        setObj.add({ name: "This is object", other: 20285 })
+        setObj.add(true)
+        setObj.add(function () { })
+        setObj.add("That")
+
+        console.log(setObj);
+        console.log("Size of set : ", setObj.size);
+        console.log("Is That in the Set? ", setObj.has("That"));
+        console.log("After removing the set : ");
+        console.log(setObj.delete("That"));
+        console.log(setObj);
+
+        // Iterating a set
+        for (let item of setObj){
+            console.log("Using for loop : " , item);
+        }
+
+        setObj.forEach((item) => {
+            console.log("Using forEach : " , item);
+        })
+
+        // For remove duplicate using set in array
+        let myArr = [10,2,36,10,5,2]
+        console.log(myArr);
+
+        let setCreate = new Set(myArr);
+        console.log(setCreate);
+
+        let returnArr = Array.from(setCreate)
+        console.log(returnArr);
+
+
+
+
+    </script>
+</body>
+
+</html>

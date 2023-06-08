@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="buttons">
+        <button id="btnDisplay">Display Cookie</button>
+        <button id="btnSet">Set Cookie1</button>
+        <button id="btnSet1">Set Cookie2</button>
+        <button id="btnSet2">Set with special char Cookie2</button>
+    </div>
+
+    <script>
+
+
+
+        document.cookie = "Name=Yash";
+        document.getElementById("btnDisplay").addEventListener("click", () => {
+            alert(decodeURIComponent(document.cookie))
+        })
+        document.getElementById("btnSet").addEventListener("click", () => {
+            document.cookie = "username=yash"
+            alert("Success!")
+        })
+        document.getElementById("btnSet1").addEventListener("click", () => {
+            document.cookie = "username1=Sanjay"
+            alert("Success!")
+        })
+        document.getElementById("btnSet2").addEventListener("click", () => {
+            let key = prompt("enter eith special char : ")
+            let value = prompt("enter eith special char : ")
+            document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}`
+            alert("success!")
+        })
+
+    </script>
+</body>
+</html>

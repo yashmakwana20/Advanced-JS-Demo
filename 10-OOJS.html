@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+
+<body>
+    <h1>OOJS </h1>
+    <script>
+
+        class complex {
+            constructor(real, imagenary) {
+                console.log("Called!");
+                this.x = real;
+                this.y = imagenary;
+                // return this.x + this.y
+            }
+
+            Add(that) {
+                return this.x + that.x + " + " + (this.y + that.y) + "i";
+            }
+        }
+        var num = new complex(3, 3)
+        console.log(num.Add({ x: 2, y: 3 }));
+
+        class Human {
+            Occupation(p_x) {
+                console.log(`Occupation of human is : ${p_x}`);
+            }
+
+            Gender(p_gender) {
+                console.log(`Gender is : ${p_gender}`);
+            }
+
+            Salary(p_salary) {
+                console.log(`Salary is : ${p_salary}`);
+            }
+        }
+        class Student extends Human {
+            Name(p_name) {
+                console.log(`Name of the students is : ${p_name}`);
+            }
+            Std(p_name, p_std) {
+                console.log(`${p_name} is study in class : ${p_std}`);
+            }
+            Salary(p_salary) {
+                super.Salary("Currentlly not independantant.");
+                console.log("Because of study is running.");
+            }
+        }
+        let student = new Student()
+        student.Occupation("Student")
+        student.Gender("Male")
+        student.Name("abc")
+        student.Std("abc", "10th")
+        student.Salary(10000)
+
+        console.log(student instanceof Student);
+        console.log("yes, this is instance of Human.");
+
+    </script>
+</body>
+
+</html>

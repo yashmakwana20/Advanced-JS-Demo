@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session & Local Storage</title>
+</head>
+<body>
+
+    <h2>Session Storage</h2>
+    <button type="button" id="btnsession">Count</button>
+    <p id="countpara"></p>
+    <p id="getitem"></p>
+
+    <h2>Local Storage</h2>
+    <p id="getlocal"></p>
+
+    <script>
+
+        // Store data in Session storage
+       document.getElementById("btnsession").addEventListener("click", function(){
+        if(sessionStorage.clickCount){
+            sessionStorage.clickCount = Number(sessionStorage.clickCount) + 1;
+        }else{
+            sessionStorage.clickCount = 1;
+        }
+        document.getElementById("countpara").textContent ="Click Count of Session : " + sessionStorage.clickCount;
+       })
+
+       sessionStorage.setItem("name","demo")
+       sessionStorage.setItem("name1","demo1")
+       sessionStorage.setItem("name2","demo2")
+
+       var get = sessionStorage.getItem("name2")
+       document.getElementById("getitem").innerHTML = "Value of session storage : " + get
+
+       sessionStorage.removeItem("name")
+    //    sessionStorage.clear()
+
+    // Store data in Local storage
+
+    localStorage.setItem("name","yash")
+    localStorage.setItem("name1","sanjay")
+    localStorage.setItem("name2","Shivam")
+
+    var local = localStorage.getItem("name1")
+    document.getElementById("getlocal").innerHTML = "Local storage value : " + local
+
+    // localStorage.removeItem("name2")
+    // localStorage.clear()
+
+    </script>
+</body>
+</html>

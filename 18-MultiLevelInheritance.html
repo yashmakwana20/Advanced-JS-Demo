@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiLevel Inheritance</title>
+</head>
+<body>
+    <script>
+        class A{
+            constructor(address){
+                this.address = address
+            }
+        }
+
+        class B extends A{
+            method1(instence){
+                console.log(instence.name,instence.age,instence.address);
+            }
+        }
+
+        class C extends B{
+            constructor(name,age,address){
+                super(address)
+                this.name = name;
+                this.age = age;
+            }
+            method (){
+                var obj = new B(this)
+                console.log(obj);
+            }
+        }
+
+
+        let obj1 = new C("Yash",22,"Rajkot")
+        let obj2 = new B()
+        obj2.method1(obj1);
+    </script>
+</body>
+</html>

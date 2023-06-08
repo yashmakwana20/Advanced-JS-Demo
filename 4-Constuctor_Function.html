@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function</title>
+</head>
+<body>
+    <h1>Constructor Function</h1>
+
+    <script>
+        function Student(p_name,p_std,p_marks){
+            this.p_name = p_name;
+            this.p_std = p_std;
+            this.p_marks = p_marks;
+            
+            this.add = (num) => {
+                this.p_marks += num
+            }
+
+            this.subStract = (num) => {
+                this.p_marks -= num
+            }
+        }
+
+        const studentFirst = new Student("Yash",10,90)
+        const studentSecond = new Student("Sanjay",9,90)
+        
+        studentFirst.add(5)
+        studentSecond.subStract(10)
+        console.log(studentFirst,studentSecond);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static</title>
+</head>
+<body>
+    <h1>Static Method</h1>
+    <script>
+
+        // Static Method and Static Properties and Statric block
+        class Student{
+            static id = 1;
+            constructor(name,age,std,fees){
+                this.id = Student.id++;
+                this.name = name;
+                this.age = age;
+                this.std = std;
+                this.fees = fees;
+            }
+
+            static {
+                console.log("Initialize Static block..");
+            }
+
+            static sortByAge(student1,student2){
+                return student1.age - student2.age
+            }
+
+            static sortByFees(student1,student2){
+                return student1.fees - student2.fees
+            }
+        }
+
+        const student1 = new Student("abc",18,"12th",50000)
+        const student2 = new Student("def",10,"2th",10000)
+        const student3 = new Student("ghi",15,"9th",30000)
+        const student4 = new Student("jkl",20,"SY",80000)
+
+        const students = [student1,student2,student3,student4];
+        students.sort(Student.sortByAge);
+        // students.sort(Student.sortByFees);
+
+        console.log(students);
+    </script>
+</body>
+</html>
